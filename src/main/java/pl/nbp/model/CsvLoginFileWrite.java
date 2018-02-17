@@ -43,6 +43,5 @@ public class CsvLoginFileWrite {
                 e.printStackTrace();
             }
         }
-
     }
 }

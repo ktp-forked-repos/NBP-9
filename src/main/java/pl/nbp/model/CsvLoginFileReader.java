@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 
 public class CsvLoginFileReader {
@@ -15,9 +13,9 @@ public class CsvLoginFileReader {
     private static final int USER_LNAME_IDX = 2;
     private static final int USER_LOGIN = 3;
     private static final int USER_PASSWORD = 4;
-    static Set<User> userSet = new HashSet<User>();
+    static ArrayList<User> userArrayList = new ArrayList<User>();
 
-    public static Set<User> readFile(String fileName) {
+    public static ArrayList<User> readFile(String fileName) {
 
         BufferedReader fileReader = null;
 
@@ -35,7 +33,7 @@ public class CsvLoginFileReader {
                             .login(tokens[USER_LOGIN])
                             .password(tokens[USER_PASSWORD])
                             .build();
-                    userSet.add(user);
+                    userArrayList.add(user);
                 }
             }
         } catch (Exception e) {
@@ -49,12 +47,11 @@ public class CsvLoginFileReader {
                 e.printStackTrace();
             }
         }
-        return userSet;
+        return userArrayList;
     }
 
     public static int returnLastId(String fileName) {
-        Set<User> set = readFile(fileName);
-        ArrayList<User> userArrayList = new ArrayList<User>(set);
+        ArrayList<User> userArrayList = readFile(fileName);
         int idMax = userArrayList.get(0).getId();
         for (int index = 1; index < userArrayList.size(); index++) {
             if (userArrayList.get(index).getId() > idMax ) {
