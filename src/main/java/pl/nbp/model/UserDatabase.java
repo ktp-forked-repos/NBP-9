@@ -10,11 +10,13 @@ public class UserDatabase {
     public UserDatabase() throws IOException {
         CsvFile csvFile = new CsvFile();
         arrayList = csvFile.read();
+        Login login = new Login(arrayList);
     }
 
     public int returnLastId() {
         return arrayList.size()+1;
     }
+
     public User addUser(String firstName, String lastName , String login , String password) {
         user = new User.UserBuilder()
                 .id(returnLastId())
