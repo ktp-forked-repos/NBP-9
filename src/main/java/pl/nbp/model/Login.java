@@ -25,5 +25,8 @@ public class Login {
             System.out.println(u.toString());
             System.out.println();
         }
+
+        UserDatabase userDatabase = new UserDatabase();
+        System.out.println(userDatabase.returnLastId());
     }
 }
