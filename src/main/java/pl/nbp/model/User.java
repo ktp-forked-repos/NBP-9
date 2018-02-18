@@ -32,27 +32,27 @@ public class User {
             return this;
         }
 
-        public UserBuilder firstName(String firstName){
+        public UserBuilder firstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public UserBuilder lastName(String lastName){
+        public UserBuilder lastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public UserBuilder login(String login){
+        public UserBuilder login(String login) {
             this.login = login;
             return this;
         }
 
-        public UserBuilder password(String password){
+        public UserBuilder password(String password) {
             this.password = password;
             return this;
         }
 
-        public User build(){
+        public User build() {
             User user = new User(this);
             return user;
         }
