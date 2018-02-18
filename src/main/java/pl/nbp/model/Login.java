@@ -42,7 +42,7 @@ public class Login {
             System.out.println();
         }
 
-        csvFile.write(user);
+//        csvFile.write(user);
     }
 
 }
