@@ -10,7 +10,11 @@ import javafx.scene.control.PasswordField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NbpAppController implements Initializable {
+/**
+ * Controller class for UserListView window.
+ */
+
+public class UserListController implements Initializable {
 
     @FXML
     private Label titleLabel;
