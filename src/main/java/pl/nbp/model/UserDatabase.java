@@ -15,14 +15,14 @@ public class UserDatabase {
     public int returnLastId() {
         return arrayList.size()+1;
     }
-//    public User addUser() {
-//        user = new User.UserBuilder()
-//                .id()
-//                .firstName()
-//                .lastName()
-//                .login()
-//                .password()
-//                .build();
-//        return user;
-//    }
+    public User addUser(String firstName, String lastName , String login , String password) {
+        user = new User.UserBuilder()
+                .id(returnLastId())
+                .firstName(firstName)
+                .lastName(lastName)
+                .login(login)
+                .password(password)
+                .build();
+        return user;
+    }
 }
