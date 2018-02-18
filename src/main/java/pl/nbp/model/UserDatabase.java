@@ -25,6 +25,11 @@ public class UserDatabase {
                 .login(login)
                 .password(password)
                 .build();
+        addUserToArrayList(user);
         return user;
+    }
+
+    public void addUserToArrayList(User user){
+        arrayList.add(user);
     }
 }
