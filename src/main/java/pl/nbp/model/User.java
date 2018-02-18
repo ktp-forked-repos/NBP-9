@@ -6,7 +6,7 @@ import lombok.ToString;
 @Getter
 @ToString
 public class User {
-    private int id;
+    private int id = 0;
     private String firstName;
     private String lastName;
     private String login;
@@ -19,8 +19,6 @@ public class User {
         this.login = userBuilder.login;
         this.password = userBuilder.password;
     }
-
-
 
     public static class UserBuilder {
         private int id;
