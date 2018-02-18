@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="225.0" maxWidth="500.0" minHeight="225.0" minWidth="500.0" prefHeight="225.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.nbp.controller.NbpAppController">
+<VBox maxHeight="225.0" maxWidth="500.0" minHeight="225.0" minWidth="500.0" prefHeight="225.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.nbp.controller.UserListController">
    <children>
       <Pane prefHeight="50.0" prefWidth="500.0">
          <children>
