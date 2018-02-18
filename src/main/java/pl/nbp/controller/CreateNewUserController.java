@@ -48,6 +48,6 @@ public class CreateNewUserController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        InputPasswordField.get
     }
 }
