@@ -9,7 +9,6 @@ public class Login {
 
     public Login(ArrayList arrayList) {
         this.arrayList = arrayList;
-//        show();
     }
 
     public static void show() {
@@ -19,9 +18,10 @@ public class Login {
     }
 
     public static void main(String[] args) throws IOException {
-        CsvFile csvFile = new CsvFile();
-        ArrayList<User> userArrayList = csvFile.read();
         UserDatabase userDatabase = new UserDatabase();
+        userDatabase.addUser("Ola" , "Nowak" , "ola" , "now");
+        userDatabase.save();
+        userDatabase.addUserToArrayList();
         Login.show();
     }
 }

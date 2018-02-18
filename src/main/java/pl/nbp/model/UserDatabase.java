@@ -6,18 +6,20 @@ import java.io.IOException;
 public class UserDatabase {
     static public ArrayList<User> arrayList = new ArrayList<User>();
     static public User user = null;
+    static public CsvFile csvFile = null;
+    static public Login login = null;
 
     public UserDatabase() throws IOException {
-        CsvFile csvFile = new CsvFile();
+        csvFile = new CsvFile();
         arrayList = csvFile.read();
-        Login login = new Login(arrayList);
+        login = new Login(arrayList);
     }
 
     public int returnLastId() {
         return arrayList.size()+1;
     }
 
-    public User addUser(String firstName, String lastName , String login , String password) {
+    public void addUser(String firstName, String lastName , String login , String password) {
         user = new User.UserBuilder()
                 .id(returnLastId())
                 .firstName(firstName)
@@ -25,11 +27,13 @@ public class UserDatabase {
                 .login(login)
                 .password(password)
                 .build();
-        addUserToArrayList(user);
-        return user;
     }
 
-    public void addUserToArrayList(User user){
+    public void addUserToArrayList(){
         arrayList.add(user);
+    }
+
+    public void save() throws IOException {
+        csvFile.write(this.user);
     }
 }

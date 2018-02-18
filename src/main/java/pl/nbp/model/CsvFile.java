@@ -21,6 +21,7 @@ public class CsvFile implements File {
 
     public void isExist() throws IOException {
         if (!(new java.io.File(PATH_TO_USER_FILE).exists())) {
+            System.out.printf("File doesn't exist but he was create");
             new java.io.File(PATH_TO_USER_FILE).createNewFile();
         }
     }
@@ -28,13 +29,14 @@ public class CsvFile implements File {
     public void isEmpty() throws IOException {
         bufferedReader = new BufferedReader(new FileReader(PATH_TO_USER_FILE));
         if (bufferedReader.readLine() == null) {
+            System.out.printf("File is Empty");
             fileWriter = new FileWriter(PATH_TO_USER_FILE);
             fileWriter.append(FILE_HEADER);
             fileWriter.close();
         }
     }
 
-    public ArrayList read(/*ArrayList arrayList*/) throws IOException {
+    public ArrayList read() throws IOException {
         isExist();
         isEmpty();
         ArrayList<User> userArrayList = new ArrayList<User>();
