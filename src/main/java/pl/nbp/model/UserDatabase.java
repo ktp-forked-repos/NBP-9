@@ -37,8 +37,11 @@ public class UserDatabase {
         csvFile.write(this.user);
     }
 
-    public void checkLoginAndPass(String login , String password){
-
+    public boolean checkLoginAndPass(String alogin , String password){
+        if(!login.ifLoginAndPasswordIsCorrect(alogin , password)) {
+            return false;
+        }
+        return true;
     }
 
 }
