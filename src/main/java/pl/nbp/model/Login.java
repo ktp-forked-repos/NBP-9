@@ -30,9 +30,13 @@ public class Login {
 
     public static void main(String[] args) throws IOException {
         UserDatabase userDatabase = new UserDatabase();
-        userDatabase.addUser("Ola", "Nowak", "ola", "now");
-        userDatabase.save();
-        userDatabase.addUserToArrayList();
-        Login.show();
+//        userDatabase.addUser("Ola", "Nowak", "ola", "now");
+//        userDatabase.save();
+//        userDatabase.addUserToArrayList();
+//        Login.show();
+//        System.out.println(userDatabase.checkLoginAndPass("kam2","kam"));
+        Confirm confirm = new Confirm();
+        String s = null;
+        System.out.println(confirm.strings(s));
     }
 }
