@@ -9,19 +9,30 @@ public class Login {
 
     public Login(ArrayList arrayList) {
         this.arrayList = arrayList;
-//        show();
+    }
+
+    public boolean ifLoginAndPasswordIsCorrect(String login, String password) {
+        for (User u : arrayList) {
+            if (u.getLogin().equals(login)) {
+                if (u.getPassword().equals(password)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static void show() {
-        for (User u: arrayList) {
+        for (User u : arrayList) {
             System.out.println(u.toString());
         }
     }
 
     public static void main(String[] args) throws IOException {
-        CsvFile csvFile = new CsvFile();
-        ArrayList<User> userArrayList = csvFile.read();
         UserDatabase userDatabase = new UserDatabase();
+        userDatabase.addUser("Ola", "Nowak", "ola", "now");
+        userDatabase.save();
+        userDatabase.addUserToArrayList();
         Login.show();
     }
 }
