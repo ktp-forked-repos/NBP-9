@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 public class UserDatabase {
-    static public ArrayList<User> arrayList = new ArrayList<User>();
+    static public ArrayList<User> arrayList = new ArrayList<>();
     static public User user = null;
     static public CsvFile csvFile = null;
     static public Login login = null;
@@ -16,10 +16,10 @@ public class UserDatabase {
     }
 
     public int returnLastId() {
-        return arrayList.size()+1;
+        return arrayList.size() + 1;
     }
 
-    public void addUser(String firstName, String lastName , String login , String password) {
+    public void addUser(String firstName, String lastName, String login, String password) {
         user = new User.UserBuilder()
                 .id(returnLastId())
                 .firstName(firstName)
@@ -29,11 +29,16 @@ public class UserDatabase {
                 .build();
     }
 
-    public void addUserToArrayList(){
+    public void addUserToArrayList() {
         arrayList.add(user);
     }
 
     public void save() throws IOException {
         csvFile.write(this.user);
     }
+
+    public void checkLoginAndPass(String login , String password){
+
+    }
+
 }
