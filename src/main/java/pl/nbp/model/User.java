@@ -3,6 +3,12 @@ package pl.nbp.model;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.List;
+
+/**
+ * @author kelthuzad
+ * This class is basic to make instance User
+ */
 @Getter
 @ToString
 public class User {
@@ -12,6 +18,10 @@ public class User {
     private String login;
     private String password;
 
+    /**
+     * Constructor User which take values from object UserBuilder
+     * @param userBuilder have all field the same which have User
+     */
     private User(UserBuilder userBuilder) {
         this.id = userBuilder.id;
         this.firstName = userBuilder.firstName;
@@ -20,6 +30,10 @@ public class User {
         this.password = userBuilder.password;
     }
 
+    /**
+     * This class is to create another instance like to User and send this value to object User.
+     * This is a design pattern Build
+     */
     public static class UserBuilder {
         private int id;
         private String firstName = "null";

@@ -5,6 +5,11 @@ import pl.nbp.model.filehandler.File;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * @author kelthuzad
+ * Class to read and write data on file with extension csv.
+ * Class implements methods on File interface.
+ */
 public class CsvFile implements File {
 
     private static final String COMMA_DELIMITER = ",";
@@ -19,23 +24,34 @@ public class CsvFile implements File {
     BufferedReader bufferedReader = null;
     FileWriter fileWriter = null;
 
+    /**
+     * Method that has the task of checking if file exist.
+     * @throws IOException
+     */
     public void isExist() throws IOException {
         if (!(new java.io.File(PATH_TO_USER_FILE).exists())) {
             System.out.printf("File doesn't exist but he was create");
-            new java.io.File(PATH_TO_USER_FILE).createNewFile();
+            createEmptyFile();
         }
     }
 
+    /**
+     * Method that has the task of checking if file is Empty
+     * @throws IOException
+     */
     public void isEmpty() throws IOException {
         bufferedReader = new BufferedReader(new FileReader(PATH_TO_USER_FILE));
         if (bufferedReader.readLine() == null) {
             System.out.printf("File is Empty");
-            fileWriter = new FileWriter(PATH_TO_USER_FILE);
-            fileWriter.append(FILE_HEADER);
-            fileWriter.close();
+            addFileHeader();
         }
     }
 
+    /**
+     * Method that has the task of read all User with file and add all user to arrayList
+     * @return arrayList which has all user who was in file
+     * @throws IOException
+     */
     public ArrayList read() throws IOException {
         isExist();
         isEmpty();
@@ -60,6 +76,11 @@ public class CsvFile implements File {
         return userArrayList;
     }
 
+    /**
+     * Method that has the task of write user to file
+     * @param user to add to file
+     * @throws IOException
+     */
     public void write(User user) throws IOException {
         isExist();
         isEmpty();
@@ -74,6 +95,24 @@ public class CsvFile implements File {
         fileWriter.append(COMMA_DELIMITER);
         fileWriter.append(user.getPassword());
         fileWriter.append(NEW_LINE_SEPARATOR);
+        fileWriter.close();
+    }
+
+    /**
+     * Method that has the task of create file
+     * @throws IOException
+     */
+    public void createEmptyFile() throws IOException {
+        new java.io.File(PATH_TO_USER_FILE).createNewFile();
+    }
+
+    /**
+     * Method that has the task of add file header
+     * @throws IOException
+     */
+    public void addFileHeader() throws IOException {
+        fileWriter = new FileWriter(PATH_TO_USER_FILE);
+        fileWriter.append(FILE_HEADER);
         fileWriter.close();
     }
 }
