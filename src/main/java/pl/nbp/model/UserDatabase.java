@@ -19,7 +19,7 @@ public class UserDatabase {
         return arrayList.size() + 1;
     }
 
-    public void addUser(String firstName, String lastName, String login, String password) {
+    public void addUser(String firstName, String lastName, String login, String password) throws IOException {
         user = new User.UserBuilder()
                 .id(returnLastId())
                 .firstName(firstName)
@@ -27,6 +27,8 @@ public class UserDatabase {
                 .login(login)
                 .password(password)
                 .build();
+        save();
+        addUserToArrayList();
     }
 
     public void addUserToArrayList() {
