@@ -19,7 +19,7 @@ public class CsvFile implements File {
     private static final int USER_LOGIN = 3;
     private static final int USER_PASSWORD = 4;
     private static final String NEW_LINE_SEPARATOR = "\n";
-    private static final String FILE_HEADER = "id,firstName,lastName,login,password";
+    private static final String FILE_HEADER = "id,firstName,lastName,signIn,password";
     static final String PATH_TO_USER_FILE = "allUser.csv";
     BufferedReader bufferedReader = null;
     FileWriter fileWriter = null;
