@@ -1,7 +1,11 @@
 package pl.nbp.model;
 
+import sun.util.resources.CurrencyNames;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Currency;
+import java.util.Locale;
 
 /**
  * @author kelthuzad
@@ -46,6 +50,7 @@ public class SignIn {
 
     public static void main(String[] args) throws IOException {
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
+//        Currency  c = Currency.getInstance()
 //        CsvFile c = new CsvFile();
 //        ArrayList<User> d = c.read();
 //        c.write(d);
