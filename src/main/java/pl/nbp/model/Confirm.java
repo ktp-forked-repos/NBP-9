@@ -12,7 +12,7 @@ public class Confirm {
      * @param string to check
      * @return true if string is correct to regex and return false if is don't correct
      */
-    public boolean strings(String string) {
+    public static boolean strings(String string) {
         if (string == null || string.isEmpty()) {
             System.out.printf("\nString is Empty or is a null");
             return false;
@@ -25,20 +25,26 @@ public class Confirm {
     /**
      * Method to check correct login
      *
-     * @param string to check
+     * @param login to check
      * @return true if login is correct to regex and return false if is don't correct
      */
-    public boolean login(String string) {
-        if (string == null || string.isEmpty()) {
+    public static boolean login(String login) {
+        if (login == null || login.isEmpty()) {
             System.out.printf("\nLogin is Empty or is a null");
             return false;
-        } else if (string.matches("[A-Za-z][A-Za-z\\S\\d]{7,15}")) {
+        } else if (login.matches("[A-Za-z][A-Za-z\\S\\d]{7,15}")) {
             return true;
         }
         return false;
     }
 
-    public boolean password(String password) {
+    /**
+     * Method to check correct password
+     *
+     * @param password to check
+     * @return true if login is correct to regex and return false if is don't correct
+     */
+    public static boolean password(String password) {
         if (password == null || password.isEmpty()) {
             System.out.printf("\nPassword is Empty or is a null");
             return false;

@@ -13,6 +13,7 @@ public class SignIn {
 
     /**
      * Constructor which get array list all user and copy list to own array list
+     *
      * @param arrayList all user
      */
     public SignIn(ArrayList arrayList) {
@@ -21,6 +22,7 @@ public class SignIn {
 
     /**
      * Method to check given login and password if are they in array list
+     *
      * @param login
      * @param password
      * @return true if login and password are in array list and return false if don't are
@@ -44,7 +46,7 @@ public class SignIn {
 
     public static void main(String[] args) throws IOException {
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
-//        managementUserDatabase.addUser("Ola", "Nowak", "ola", "now");
+        managementUserDatabase.addUser("Ola", "Nowak", "ola", "now");
 //        managementUserDatabase.save();
 //        managementUserDatabase.addUserToArrayList();
 //        SignIn.show();

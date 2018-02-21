@@ -26,7 +26,7 @@ public interface File {
      * @return arrayList all user
      * @throws IOException
      */
-    public ArrayList read(/*ArrayList arrayList*/) throws IOException;
+    public ArrayList read() throws IOException;
 
     /**
      * Write user to file

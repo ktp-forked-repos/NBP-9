@@ -1,5 +1,6 @@
 package pl.nbp.model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ public class ManagementUserDatabase {
     /**
      * Constructor which read with file all user and put their in array list and
      * he give this array list to class signIn
+     *
      * @throws IOException
      */
     public ManagementUserDatabase() throws IOException {
@@ -26,6 +28,7 @@ public class ManagementUserDatabase {
 
     /**
      * Method to set last value id user
+     *
      * @return last value id
      */
     public int returnLastId() {
@@ -34,6 +37,7 @@ public class ManagementUserDatabase {
 
     /**
      * Method to add new user
+     *
      * @param firstName
      * @param lastName
      * @param login
@@ -41,15 +45,19 @@ public class ManagementUserDatabase {
      * @throws IOException
      */
     public void addUser(String firstName, String lastName, String login, String password) throws IOException {
-        user = new User.UserBuilder()
-                .id(returnLastId())
-                .firstName(firstName)
-                .lastName(lastName)
-                .login(login)
-                .password(password)
-                .build();
-        save();
-        addUserToArrayList();
+        if (Confirm.strings(firstName) && Confirm.strings(lastName) && Confirm.login(login) && Confirm.password(password)) {
+            user = new User.UserBuilder()
+                    .id(returnLastId())
+                    .firstName(firstName)
+                    .lastName(lastName)
+                    .login(login)
+                    .password(password)
+                    .build();
+            save();
+            addUserToArrayList();
+        } else {
+            JOptionPane.showMessageDialog(null , "Input data is not correct");
+        }
     }
 
     /**
@@ -61,6 +69,7 @@ public class ManagementUserDatabase {
 
     /**
      * Method responsible for write new user to file with other user
+     *
      * @throws IOException
      */
     public void save() throws IOException {
@@ -69,12 +78,13 @@ public class ManagementUserDatabase {
 
     /**
      * Method check login and password
+     *
      * @param login
      * @param password
      * @return true if login and password are in array list and return false if don't are
      */
-    public boolean checkLoginAndPass(String login , String password){
-        if(signIn.whetherLoginAndPasswordInArray(login , password)) {
+    public boolean checkLoginAndPass(String login, String password) {
+        if (signIn.whetherLoginAndPasswordInArray(login, password)) {
             return true;
         }
         return false;

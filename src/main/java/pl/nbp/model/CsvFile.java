@@ -26,6 +26,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of checking if file exist.
+     *
      * @throws IOException
      */
     public void isExist() throws IOException {
@@ -37,6 +38,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of checking if file is Empty
+     *
      * @throws IOException
      */
     public void isEmpty() throws IOException {
@@ -49,6 +51,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of read all User with file and add all user to arrayList
+     *
      * @return arrayList which has all user who was in file
      * @throws IOException
      */
@@ -78,6 +81,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of write user to file
+     *
      * @param user to add to file
      * @throws IOException
      */
@@ -100,6 +104,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of create file
+     *
      * @throws IOException
      */
     public void createEmptyFile() throws IOException {
@@ -108,6 +113,7 @@ public class CsvFile implements File {
 
     /**
      * Method that has the task of add file header
+     *
      * @throws IOException
      */
     public void addFileHeader() throws IOException {

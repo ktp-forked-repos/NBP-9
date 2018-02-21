@@ -20,6 +20,7 @@ public class User {
 
     /**
      * Constructor User which take values from object UserBuilder
+     *
      * @param userBuilder have all field the same which have User
      */
     private User(UserBuilder userBuilder) {
