@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public class ManagementUserDatabase {
     static public ArrayList<User> arrayList = new ArrayList<>();
+    static public ArrayList<User> arrayListNewUser = new ArrayList<>();
     static public User user = null;
     static public CsvFile csvFile = null;
     static public SignIn signIn = null;
@@ -53,6 +54,7 @@ public class ManagementUserDatabase {
                     .login(login)
                     .password(password)
                     .build();
+            arrayListNewUser.add(user);
             save();
             addUserToArrayList();
         } else {
@@ -73,7 +75,8 @@ public class ManagementUserDatabase {
      * @throws IOException
      */
     public void save() throws IOException {
-        csvFile.write(this.user);
+        csvFile.write(arrayListNewUser);
+//        arrayList.add(user);
     }
 
     /**

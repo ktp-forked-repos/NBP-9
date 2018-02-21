@@ -82,25 +82,50 @@ public class CsvFile implements File {
     /**
      * Method that has the task of write user to file
      *
-     * @param user to add to file
+     * @param E is arrayList which write to file
      * @throws IOException
      */
-    public void write(User user) throws IOException {
+    public void write(ArrayList E) throws IOException {
+        ArrayList<User> newUserTowrite = E;
+        System.out.println(newUserTowrite.toString());
         isExist();
         isEmpty();
         fileWriter = new FileWriter(PATH_TO_USER_FILE, true);
-        fileWriter.append(String.valueOf(user.getId()));
+        fileWriter.append(String.valueOf(newUserTowrite.get(0).getId()));
         fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(user.getFirstName());
+        fileWriter.append(newUserTowrite.get(0).getFirstName());
         fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(user.getLastName());
+        fileWriter.append(newUserTowrite.get(0).getLastName());
         fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(user.getLogin());
+        fileWriter.append(newUserTowrite.get(0).getLogin());
         fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(user.getPassword());
+        fileWriter.append(newUserTowrite.get(0).getPassword());
         fileWriter.append(NEW_LINE_SEPARATOR);
         fileWriter.close();
     }
+
+//    /**
+//     * Method that has the task of write user to file
+//     *
+//     * @param user to add to file
+//     * @throws IOException
+//     */
+//    public void write(User user) throws IOException {
+//        isExist();
+//        isEmpty();
+//        fileWriter = new FileWriter(PATH_TO_USER_FILE, true);
+//        fileWriter.append(String.valueOf(user.getId()));
+//        fileWriter.append(COMMA_DELIMITER);
+//        fileWriter.append(user.getFirstName());
+//        fileWriter.append(COMMA_DELIMITER);
+//        fileWriter.append(user.getLastName());
+//        fileWriter.append(COMMA_DELIMITER);
+//        fileWriter.append(user.getLogin());
+//        fileWriter.append(COMMA_DELIMITER);
+//        fileWriter.append(user.getPassword());
+//        fileWriter.append(NEW_LINE_SEPARATOR);
+//        fileWriter.close();
+//    }
 
     /**
      * Method that has the task of create file

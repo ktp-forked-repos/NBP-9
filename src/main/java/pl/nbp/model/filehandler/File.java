@@ -5,10 +5,13 @@ import pl.nbp.model.User;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static javafx.scene.input.KeyCode.T;
+
 /**
  * Interface which has implement few method to connect whit operation on file
  */
-public interface File {
+public interface File <E>{
+
     /**
      * Check if file exist
      * @throws IOException
@@ -30,10 +33,10 @@ public interface File {
 
     /**
      * Write user to file
-     * @param user to write
      * @throws IOException
      */
-    public void write(User user) throws IOException;
+    public void write(ArrayList<E> E) throws IOException;
+//    public void write(User user) throws IOException;
 
     /**
      * Create empty file

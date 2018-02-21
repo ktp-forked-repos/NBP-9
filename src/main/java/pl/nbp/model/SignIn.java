@@ -46,13 +46,16 @@ public class SignIn {
 
     public static void main(String[] args) throws IOException {
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
-        managementUserDatabase.addUser("Ola", "Nowak", "ola", "now");
+//        CsvFile c = new CsvFile();
+//        ArrayList<User> d = c.read();
+//        c.write(d);
+        managementUserDatabase.addUser("Ola", "Nowak", "ola555Ae", "fsdfsdfR3");
 //        managementUserDatabase.save();
 //        managementUserDatabase.addUserToArrayList();
-//        SignIn.show();
+        SignIn.show();
 //        System.out.println(managementUserDatabase.checkLoginAndPass("kam2","kam"));
-        Confirm confirm = new Confirm();
-        String s = null;
-        System.out.println(confirm.strings(s));
+//        Confirm confirm = new Confirm();
+//        String s = null;
+//        System.out.println(confirm.strings(s));
     }
 }
