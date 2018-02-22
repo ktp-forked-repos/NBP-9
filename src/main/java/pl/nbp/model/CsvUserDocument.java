@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Class to read and write data on file with extension csv.
  * Class implements methods on Document interface.
  */
-public class CsvDocument implements Document {
+public class CsvUserDocument implements Document {
 
     private static final String COMMA_DELIMITER = ",";
     private static final int USER_ID_IDX = 0;
@@ -18,9 +18,10 @@ public class CsvDocument implements Document {
     private static final int USER_PASSWORD = 4;
     private static final String NEW_LINE_SEPARATOR = "\n";
     private static final String FILE_HEADER = "id,firstName,lastName,signIn,password";
-    static final String PATH_TO_USER_FILE = "allUser.csv";
+    //    static final String path = "allUser.csv";
     BufferedReader bufferedReader = null;
     FileWriter fileWriter = null;
+    private static String path = null;
 
     /**
      * Method that has the task of checking if file exist.
@@ -28,7 +29,7 @@ public class CsvDocument implements Document {
      * @throws IOException
      */
     public void isExist() throws IOException {
-        if (!(new java.io.File(PATH_TO_USER_FILE).exists())) {
+        if (!(new java.io.File(path).exists())) {
             System.out.printf("Document doesn't exist but he was create");
             createEmptyFile();
         }
@@ -40,7 +41,7 @@ public class CsvDocument implements Document {
      * @throws IOException
      */
     public void isEmpty() throws IOException {
-        bufferedReader = new BufferedReader(new FileReader(PATH_TO_USER_FILE));
+        bufferedReader = new BufferedReader(new FileReader(path));
         if (bufferedReader.readLine() == null) {
             System.out.printf("Document is Empty");
             addFileHeader();
@@ -53,12 +54,13 @@ public class CsvDocument implements Document {
      * @return arrayList which has all user who was in file
      * @throws IOException
      */
-    public ArrayList read() throws IOException {
+    public ArrayList read(String pathToFile) throws IOException {
+        path = pathToFile;
         isExist();
         isEmpty();
         ArrayList<User> userArrayList = new ArrayList<User>();
         String line = "";
-        bufferedReader = new BufferedReader(new FileReader(PATH_TO_USER_FILE));
+        bufferedReader = new BufferedReader(new FileReader(path));
         bufferedReader.readLine();
         while ((line = bufferedReader.readLine()) != null) {
             String[] tokens = line.split(COMMA_DELIMITER);
@@ -83,22 +85,25 @@ public class CsvDocument implements Document {
      * @param E is arrayList which write to file
      * @throws IOException
      */
-    public void write(ArrayList E) throws IOException {
+    public void write(ArrayList E, String pathToFile) throws IOException {
+        path = pathToFile;
         ArrayList<User> newUserTowrite = E;
         System.out.println(newUserTowrite.toString());
         isExist();
         isEmpty();
-        fileWriter = new FileWriter(PATH_TO_USER_FILE, true);
-        fileWriter.append(String.valueOf(newUserTowrite.get(0).getId()));
-        fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(newUserTowrite.get(0).getFirstName());
-        fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(newUserTowrite.get(0).getLastName());
-        fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(newUserTowrite.get(0).getLogin());
-        fileWriter.append(COMMA_DELIMITER);
-        fileWriter.append(newUserTowrite.get(0).getPassword());
-        fileWriter.append(NEW_LINE_SEPARATOR);
+        for (int index = 0; index < newUserTowrite.size(); index++) {
+            fileWriter = new FileWriter(path, true);
+            fileWriter.append(String.valueOf(newUserTowrite.get(index).getId()));
+            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(newUserTowrite.get(index).getFirstName());
+            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(newUserTowrite.get(index).getLastName());
+            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(newUserTowrite.get(index).getLogin());
+            fileWriter.append(COMMA_DELIMITER);
+            fileWriter.append(newUserTowrite.get(index).getPassword());
+            fileWriter.append(NEW_LINE_SEPARATOR);
+}
         fileWriter.close();
         newUserTowrite.clear();
     }
@@ -112,7 +117,7 @@ public class CsvDocument implements Document {
 //    public void write(User user) throws IOException {
 //        isExist();
 //        isEmpty();
-//        fileWriter = new FileWriter(PATH_TO_USER_FILE, true);
+//        fileWriter = new FileWriter(path, true);
 //        fileWriter.append(String.valueOf(user.getId()));
 //        fileWriter.append(COMMA_DELIMITER);
 //        fileWriter.append(user.getFirstName());
@@ -132,7 +137,7 @@ public class CsvDocument implements Document {
      * @throws IOException
      */
     public void createEmptyFile() throws IOException {
-        new java.io.File(PATH_TO_USER_FILE).createNewFile();
+        new java.io.File(path).createNewFile();
     }
 
     /**
@@ -141,7 +146,7 @@ public class CsvDocument implements Document {
      * @throws IOException
      */
     public void addFileHeader() throws IOException {
-        fileWriter = new FileWriter(PATH_TO_USER_FILE);
+        fileWriter = new FileWriter(path);
         fileWriter.append(FILE_HEADER);
         fileWriter.close();
     }

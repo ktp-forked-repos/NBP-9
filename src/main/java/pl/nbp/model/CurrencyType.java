@@ -156,7 +156,8 @@ public enum CurrencyType {
     ZMW("kwacha zambijska"),
     SVC("colon salwadorski"),
     STN("dobra (Wyspy Świetego Tomasza i Książęca)"),
-    MRU("ouguiya (Mauretania)");
+    MRU("ouguiya (Mauretania)"),
+    XXX("wszystkie waluty");
 
     private String currencyName;
 

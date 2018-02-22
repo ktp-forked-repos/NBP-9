@@ -12,7 +12,7 @@ public class ManagementUserDatabase {
     static public ArrayList<User> arrayList = new ArrayList<>();
     static public ArrayList<User> arrayListNewUser = new ArrayList<>();
     static public User user = null;
-    static public CsvDocument csvFile = null;
+    static public CsvUserDocument csvFile = null;
     static public SignIn signIn = null;
 
     /**
@@ -22,8 +22,8 @@ public class ManagementUserDatabase {
      * @throws IOException
      */
     public ManagementUserDatabase() throws IOException {
-        csvFile = new CsvDocument();
-        arrayList = csvFile.read();
+        csvFile = new CsvUserDocument();
+        arrayList = csvFile.read("allUser.csv");
         signIn = new SignIn(arrayList);
     }
 
@@ -76,7 +76,7 @@ public class ManagementUserDatabase {
      * @throws IOException
      */
     public void save() throws IOException {
-        csvFile.write(arrayListNewUser);
+        csvFile.write(arrayListNewUser, "allUser.csv");
 //        arrayList.add(user);
     }
 
