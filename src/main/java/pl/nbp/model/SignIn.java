@@ -1,5 +1,6 @@
 package pl.nbp.model;
 
+import pl.nbp.model.Enum.TableOrRate;
 import pl.nbp.model.menagement.ManagementUserDatabase;
 
 import java.io.BufferedReader;
@@ -54,24 +55,25 @@ public class SignIn {
     public static void main(String[] args) throws IOException {
 
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
-        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/50");
-        URLConnection connection = url.openConnection();
-        InputStream in = connection.getInputStream();
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
-        String line = null;
-        String a = new String();
-        while ((line = bufferedReader.readLine()) !=null) {
-            a += line;
-        }
-//        System.out.println(a);
-        String split2[] = a.split(":\\[\\{");
-//        for (int i = 0; i < split2.length; i++) {
-//            System.out.println(split2[i]);
+        System.out.println(TableOrRate.valueOf("tablica kursów"));
+//        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/50");
+//        URLConnection connection = url.openConnection();
+//        InputStream in = connection.getInputStream();
+//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+//        String line = null;
+//        String a = new String();
+//        while ((line = bufferedReader.readLine()) !=null) {
+//            a += line;
 //        }
-        String split[] = split2[1].split("},\\{");
-        for (int index = 0; index < split.length; index++) {
-            System.out.println(split[index]) ;
-        }
+////        System.out.println(a);
+//        String split2[] = a.split(":\\[\\{");
+////        for (int i = 0; i < split2.length; i++) {
+////            System.out.println(split2[i]);
+////        }
+//        String split[] = split2[1].split("},\\{");
+//        for (int index = 0; index < split.length; index++) {
+//            System.out.println(split[index]) ;
+//        }
 //        TextURL url = new TextURL(urlString);
 //        String s = CurrencyTypeInTableA.fromValue("ouguiya (Mauretania)").toString();
 //        System.out.println(s);

@@ -1,6 +1,6 @@
 package pl.nbp.model.Enum;
 
-public enum CurrencyTypeInTableB {
+public enum      CurrencyTypeInTableB {
     AFN("afgani (Afganistan)"),
     MGA("ariary (Madagaskar)"),
     PAB("balboa (Panama)"),
