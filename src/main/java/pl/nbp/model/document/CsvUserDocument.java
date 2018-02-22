@@ -1,4 +1,7 @@
-package pl.nbp.model;
+package pl.nbp.model.document;
+
+import pl.nbp.model.Interface.Document;
+import pl.nbp.model.User;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,7 +9,7 @@ import java.util.ArrayList;
 /**
  * @author kelthuzad
  * Class to read and write data on file with extension csv.
- * Class implements methods on Document interface.
+ * Class implements methods on Document Interface.
  */
 public class CsvUserDocument implements Document {
 

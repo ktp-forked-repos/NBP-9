@@ -1,5 +1,7 @@
-package pl.nbp.model;
+package pl.nbp.model.document;
 
+
+import pl.nbp.model.Interface.Document;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

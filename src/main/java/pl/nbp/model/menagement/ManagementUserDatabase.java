@@ -1,4 +1,9 @@
-package pl.nbp.model;
+package pl.nbp.model.menagement;
+
+import pl.nbp.model.Confirm;
+import pl.nbp.model.SignIn;
+import pl.nbp.model.User;
+import pl.nbp.model.document.CsvUserDocument;
 
 import javax.swing.*;
 import java.util.ArrayList;

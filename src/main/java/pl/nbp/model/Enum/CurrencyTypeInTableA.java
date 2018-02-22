@@ -1,12 +1,10 @@
-package pl.nbp.model;
-
-import java.util.SplittableRandom;
+package pl.nbp.model.Enum;
 
 /**
  * @author kelthuzad
  * All name currency
  */
-public enum CurrencyType {
+public enum CurrencyTypeInTableA {
 
     AUD("dolar australijski"),
     BAM("wymienialna marka (Bośnia i Hercegowina)"),
@@ -48,7 +46,7 @@ public enum CurrencyType {
 
     private String currencyName;
 
-    private CurrencyType(String currencyName) {
+    private CurrencyTypeInTableA(String currencyName) {
         this.currencyName = currencyName;
     }
 
@@ -56,8 +54,8 @@ public enum CurrencyType {
         return currencyName;
     }
 
-    public static CurrencyType fromValue(String s) {
-        for (CurrencyType type : values()) {
+    public static CurrencyTypeInTableA fromValue(String s) {
+        for (CurrencyTypeInTableA type : values()) {
             if (type.getCurrencyType().equals(s)) {
                 return type;
             }

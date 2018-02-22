@@ -1,4 +1,4 @@
-package pl.nbp.model;
+package pl.nbp.model.Enum;
 
 public enum CurrencyTypeInTableB {
     AFN("afgani (Afganistan)"),

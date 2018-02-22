@@ -1,7 +1,6 @@
 package pl.nbp.model;
 
-import sun.misc.IOUtils;
-import sun.util.resources.CurrencyNames;
+import pl.nbp.model.menagement.ManagementUserDatabase;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +9,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Locale;
 
 /**
  * @author kelthuzad
@@ -76,7 +73,7 @@ public class SignIn {
             System.out.println(split[index]) ;
         }
 //        TextURL url = new TextURL(urlString);
-//        String s = CurrencyType.fromValue("ouguiya (Mauretania)").toString();
+//        String s = CurrencyTypeInTableA.fromValue("ouguiya (Mauretania)").toString();
 //        System.out.println(s);
 //        Currency  c = Currency.getInstance()
 //        CsvDocument c = new CsvDocument();

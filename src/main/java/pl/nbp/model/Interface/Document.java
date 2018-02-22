@@ -1,4 +1,4 @@
-package pl.nbp.model;
+package pl.nbp.model.Interface;
 
 import pl.nbp.model.User;
 
