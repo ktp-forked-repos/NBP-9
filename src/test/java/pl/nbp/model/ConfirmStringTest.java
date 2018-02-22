@@ -19,8 +19,9 @@ public class ConfirmStringTest {
     }
 
 //    @Test
-//    public void stringIsNull() {
-//        assertEquals(null, systemUnderTest.strings(null));
+//    public void stringIsNull(String s) {
+////        assertEquals("", systemUnderTest.strings(null));
+//        assertFalse(systemUnderTest.);
 //    }
 //TODO nie wiem jak to zrobić by te testy działały
 //    @Test
