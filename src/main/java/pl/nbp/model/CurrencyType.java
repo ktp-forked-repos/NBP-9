@@ -2,6 +2,10 @@ package pl.nbp.model;
 
 import java.util.SplittableRandom;
 
+/**
+ * @author kelthuzad
+ * All name currency
+ */
 public enum CurrencyType {
     AED("dirham ZEA (Zjednoczone Emiraty Arabskie)"),
     AFN("afgani (Afganistan)"),
@@ -160,13 +164,13 @@ public enum CurrencyType {
         this.currencyName = currencyName;
     }
 
-    private String getCurrenctType() {
+    public String getCurrencyType() {
         return currencyName;
     }
 
     public static CurrencyType fromValue(String s) {
         for (CurrencyType type : values()) {
-            if (type.getCurrenctType().equals(s)) {
+            if (type.getCurrencyType().equals(s)) {
                 return type;
             }
         }

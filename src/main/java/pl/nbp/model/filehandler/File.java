@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import static javafx.scene.input.KeyCode.T;
 
 /**
+ * @author kelthuzad
  * Interface which has implement few method to connect whit operation on file
  */
 public interface File <E>{
@@ -16,37 +17,40 @@ public interface File <E>{
      * Check if file exist
      * @throws IOException
      */
-    public void isExist() throws IOException;
+    void isExist() throws IOException;
 
     /**
      * Check if file is empty
      * @throws IOException
      */
-    public void isEmpty() throws IOException;
+    void isEmpty() throws IOException;
 
     /**
      * Read with file all user and add their to arrayList
      * @return arrayList all user
      * @throws IOException
      */
-    public ArrayList read() throws IOException;
+    ArrayList read() throws IOException;
 
     /**
      * Write user to file
      * @throws IOException
      */
-    public void write(ArrayList<E> E) throws IOException;
+    void write(ArrayList<E> E) throws IOException;
 //    public void write(User user) throws IOException;
+//    void write(User user) throws IOException;
+//    void write(String s) throws IOException;
+//    <T> void write(T elem) throws IOException;
 
     /**
      * Create empty file
      * @throws IOException
      */
-    public void createEmptyFile() throws IOException;
+    void createEmptyFile() throws IOException;
 
     /**
      * Add file header
      * @throws IOException
      */
-    public void addFileHeader() throws IOException;
+    void addFileHeader() throws IOException;
 }
