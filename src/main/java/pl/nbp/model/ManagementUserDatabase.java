@@ -56,6 +56,7 @@ public class ManagementUserDatabase {
                     .build();
             arrayListNewUser.add(user);
             save();
+            arrayListNewUser.clear();
             addUserToArrayList();
         } else {
             JOptionPane.showMessageDialog(null , "Input data is not correct");

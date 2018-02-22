@@ -49,7 +49,11 @@ public class SignIn {
     }
 
     public static void main(String[] args) throws IOException {
+
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
+
+//        String s = CurrencyType.fromValue("ouguiya (Mauretania)").toString();
+//        System.out.println(s);
 //        Currency  c = Currency.getInstance()
 //        CsvFile c = new CsvFile();
 //        ArrayList<User> d = c.read();

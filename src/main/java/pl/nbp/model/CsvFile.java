@@ -102,6 +102,7 @@ public class CsvFile implements File {
         fileWriter.append(newUserTowrite.get(0).getPassword());
         fileWriter.append(NEW_LINE_SEPARATOR);
         fileWriter.close();
+        newUserTowrite.clear();
     }
 
 //    /**
