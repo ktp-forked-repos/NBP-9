@@ -1,8 +1,14 @@
 package pl.nbp.model;
 
+import sun.misc.IOUtils;
 import sun.util.resources.CurrencyNames;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Locale;
@@ -51,7 +57,25 @@ public class SignIn {
     public static void main(String[] args) throws IOException {
 
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
-
+        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/50");
+        URLConnection connection = url.openConnection();
+        InputStream in = connection.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+        String line = null;
+        String a = new String();
+        while ((line = bufferedReader.readLine()) !=null) {
+            a += line;
+        }
+//        System.out.println(a);
+        String split2[] = a.split(":\\[\\{");
+//        for (int i = 0; i < split2.length; i++) {
+//            System.out.println(split2[i]);
+//        }
+        String split[] = split2[1].split("},\\{");
+        for (int index = 0; index < split.length; index++) {
+            System.out.println(split[index]) ;
+        }
+//        TextURL url = new TextURL(urlString);
 //        String s = CurrencyType.fromValue("ouguiya (Mauretania)").toString();
 //        System.out.println(s);
 //        Currency  c = Currency.getInstance()
