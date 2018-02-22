@@ -55,7 +55,7 @@ public class SignIn {
 //        String s = CurrencyType.fromValue("ouguiya (Mauretania)").toString();
 //        System.out.println(s);
 //        Currency  c = Currency.getInstance()
-//        CsvFile c = new CsvFile();
+//        CsvDocument c = new CsvDocument();
 //        ArrayList<User> d = c.read();
 //        c.write(d);
 //        managementUserDatabase.addUser("Ola", "Nowak", "ola555Ae", "fsdfsdfR3");

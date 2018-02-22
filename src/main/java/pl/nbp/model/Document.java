@@ -1,4 +1,4 @@
-package pl.nbp.model.filehandler;
+package pl.nbp.model;
 
 import pl.nbp.model.User;
 
@@ -11,7 +11,7 @@ import static javafx.scene.input.KeyCode.T;
  * @author kelthuzad
  * Interface which has implement few method to connect whit operation on file
  */
-public interface File <E>{
+public interface Document<E>{
 
     /**
      * Check if file exist

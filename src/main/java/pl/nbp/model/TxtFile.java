@@ -1,11 +1,11 @@
 //package pl.nbp.model;
 //
-//import pl.nbp.model.filehandler.File;
+//import pl.nbp.model.filehandler.Document;
 //
 //import java.io.IOException;
 //import java.util.ArrayList;
 //
-//public class TxtFile implements File{
+//public class TxtFile implements Document{
 //    @Override
 //    public void isExist() throws IOException {
 //

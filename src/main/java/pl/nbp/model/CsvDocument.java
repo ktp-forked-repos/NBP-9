@@ -1,16 +1,14 @@
 package pl.nbp.model;
 
-import pl.nbp.model.filehandler.File;
-
 import java.io.*;
 import java.util.ArrayList;
 
 /**
  * @author kelthuzad
  * Class to read and write data on file with extension csv.
- * Class implements methods on File interface.
+ * Class implements methods on Document interface.
  */
-public class CsvFile implements File {
+public class CsvDocument implements Document {
 
     private static final String COMMA_DELIMITER = ",";
     private static final int USER_ID_IDX = 0;
@@ -31,7 +29,7 @@ public class CsvFile implements File {
      */
     public void isExist() throws IOException {
         if (!(new java.io.File(PATH_TO_USER_FILE).exists())) {
-            System.out.printf("File doesn't exist but he was create");
+            System.out.printf("Document doesn't exist but he was create");
             createEmptyFile();
         }
     }
@@ -44,7 +42,7 @@ public class CsvFile implements File {
     public void isEmpty() throws IOException {
         bufferedReader = new BufferedReader(new FileReader(PATH_TO_USER_FILE));
         if (bufferedReader.readLine() == null) {
-            System.out.printf("File is Empty");
+            System.out.printf("Document is Empty");
             addFileHeader();
         }
     }
