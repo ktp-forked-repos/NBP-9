@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class MenagementCurrencyDatabase {
 
     static public ArrayList<String> arrayListCurrency = new ArrayList<>();
-    static public CurrencyTypeInTableA tableA;
 
     public MenagementCurrencyDatabase() {
 //        QueriesToWeb queries = new QueriesToWeb();

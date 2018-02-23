@@ -1,5 +1,6 @@
 package pl.nbp.model;
 
+import pl.nbp.model.Enum.NameTable;
 import pl.nbp.model.Enum.TableOrRate;
 import pl.nbp.model.menagement.ManagementUserDatabase;
 
@@ -55,8 +56,12 @@ public class SignIn {
     public static void main(String[] args) throws IOException {
 
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
-        System.out.println(TableOrRate.valueOf("tablica kursów"));
+//        System.out.println(TableOrRate.valueOf("tablica kursów"));
+//        String s = QueriesToWeb.tableCurrency(TableOrRate.fromValue("kurs waluty") , NameTable.C);
+        String s = QueriesToWeb.seriesOfLastCountTableCurrency(TableOrRate.fromValue("tablica kursów") , NameTable.A , 4);
+        System.out.println(s);
 //        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/50");
+//        URL url = new URL(s);
 //        URLConnection connection = url.openConnection();
 //        InputStream in = connection.getInputStream();
 //        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
@@ -65,11 +70,11 @@ public class SignIn {
 //        while ((line = bufferedReader.readLine()) !=null) {
 //            a += line;
 //        }
-////        System.out.println(a);
+//        System.out.println(a);
 //        String split2[] = a.split(":\\[\\{");
-////        for (int i = 0; i < split2.length; i++) {
-////            System.out.println(split2[i]);
-////        }
+//        for (int i = 0; i < split2.length; i++) {
+//            System.out.println(split2[i]);
+//        }
 //        String split[] = split2[1].split("},\\{");
 //        for (int index = 0; index < split.length; index++) {
 //            System.out.println(split[index]) ;

@@ -14,12 +14,12 @@ public enum TableOrRate {
         return tableOrRate;
     }
 
-//    public static TableOrRate fromValue(String s) {
-//        for (TableOrRate type : values()) {
-//            if (type.getTableOrRate().equals(s)) {
-//                return type;
-//            }
-//        }
-//        return null;
-//    }
+    public static TableOrRate fromValue(String s) {
+        for (TableOrRate type : values()) {
+            if (type.getTableOrRate().equals(s)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }
