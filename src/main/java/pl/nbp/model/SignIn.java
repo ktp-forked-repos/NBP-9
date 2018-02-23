@@ -58,8 +58,8 @@ public class SignIn {
         ManagementUserDatabase managementUserDatabase = new ManagementUserDatabase();
 //        System.out.println(TableOrRate.valueOf("tablica kursów"));
 //        String s = QueriesToWeb.tableCurrency(TableOrRate.fromValue("kurs waluty") , NameTable.C);
-        String s = QueriesToWeb.seriesOfLastCountTableCurrency(TableOrRate.fromValue("tablica kursów") , NameTable.A , 4);
-        System.out.println(s);
+//        String s = QueriesToWeb.seriesOfLastCountTableCurrency(TableOrRate.fromValue("tablica kursów") , NameTable.A , 4);
+//        System.out.println(s);
 //        URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/a/gbp/last/50");
 //        URL url = new URL(s);
 //        URLConnection connection = url.openConnection();

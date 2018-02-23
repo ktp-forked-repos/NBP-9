@@ -86,9 +86,10 @@ public class QueriesToWeb {
         stringBuilder.append(COMMA_DELIMITER);
         stringBuilder.append(nameTable);
         stringBuilder.append(COMMA_DELIMITER);
-        if (nameTable.equals("A")) {
-
-        }
+//        if (nameTable.equals("A")) {
+//
+//        }
+        return stringBuilder.toString();
     }
 
 //
